@@ -9,6 +9,13 @@ variable "vpc_name" {
   type        = string
 }
 
+variable "vpc_id" {
+  type        = string
+}
+variable "vpc__private_subnets" {
+  type        = string
+}
+
 variable "vpc_cidr" {
   description = "O bloco CIDR que você deseja usar para sua VPC."
   type        = string
