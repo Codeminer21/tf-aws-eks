@@ -12,8 +12,8 @@ variable "vpc_name" {
 variable "vpc_id" {
   type        = string
 }
-variable "vpc__private_subnets" {
-  type        = string
+variable "vpc_private_subnets" {
+  type        = list(string)
 }
 
 variable "vpc_cidr" {
@@ -55,3 +55,4 @@ variable "public_subnets" {
   description = "As sub-redes públicas em que você deseja implantar seus nós EKS."
   type        = list(string)
 }
+

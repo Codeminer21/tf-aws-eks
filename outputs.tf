@@ -17,3 +17,9 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = module.eks.cluster_name
 }
+
+output "cluster_ca_certificate" {
+	description = "value of certificateAuthorityData associated with the cluster"
+	value       = module.eks.cluster_tls_certificate_sha1_fingerprint
+}
+
