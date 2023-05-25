@@ -49,6 +49,28 @@ module "eks" {
       desired_size = 1
     }
   }
+
+  manage_aws_auth_configmap = true
+
+  aws_auth_roles = [
+    {
+      rolearn  = "arn:aws:iam::453118825587:policy/eks-module-example-QHkuqVix-cluster-ClusterEncryption2023052519314562390000000e"
+      username = "role1"
+      groups   = ["acess"]
+    },
+  ]
+
+  aws_auth_users = [
+    {
+      userarn  = "arn:aws:iam::453118825587:user/vscode"
+      username = "vscode"
+      groups   = ["acess"]
+    },
+  ]
+
+  aws_auth_accounts = [
+    "vscode"
+  ]
 }
     
 # # https://aws.amazon.com/blogs/containers/amazon-ebs-csi-driver-is-now-generally-available-in-amazon-eks-add-ons/ 
